@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Navy Classroom — Mohammad Abbas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles/shared.css" />
+  <style>
+    :root {
+      --navy: #14213d;
+      --sky: #e8eef6;
+      --gold: #c9a227;
+    }
+    body {
+      font-family: "Nunito Sans", sans-serif;
+      color: var(--navy);
+      background: var(--sky);
+      min-height: 100vh;
+    }
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(105deg, rgba(20,33,61,0.92) 0%, rgba(20,33,61,0.55) 42%, rgba(20,33,61,0.2) 70%, transparent 100%),
+        url("../assets/teacher.jpg") right center / cover no-repeat;
+      animation: slowZoom 20s ease-in-out infinite alternate;
+    }
+    .content {
+      position: relative;
+      z-index: 2;
+      padding: clamp(2rem, 6vw, 5rem);
+      color: #f5f7fb;
+      max-width: 36rem;
+      animation: fadeUp 0.85s ease both;
+    }
+    .brand {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: clamp(2.6rem, 6vw, 4.2rem);
+      line-height: 1.1;
+    }
+    .brand span {
+      display: block;
+      font-size: 0.42em;
+      font-style: italic;
+      color: var(--gold);
+      margin-top: 0.55rem;
+      letter-spacing: 0.02em;
+    }
+    .lead {
+      margin: 1.2rem 0 1.6rem;
+      opacity: 0.9;
+      line-height: 1.55;
+      font-size: 1.08rem;
+    }
+    .rule {
+      width: 64px;
+      height: 3px;
+      background: var(--gold);
+      margin-bottom: 1.25rem;
+      animation: grow 1s ease 0.3s both;
+    }
+    .socials a {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.28);
+      color: #fff;
+      border-radius: 0.35rem;
+    }
+    .socials a:hover { background: var(--gold); border-color: var(--gold); color: var(--navy); }
+    .phone { color: var(--gold); }
+    @keyframes grow {
+      from { width: 0; opacity: 0; }
+      to { width: 64px; opacity: 1; }
+    }
+    @media (max-width: 700px) {
+      .hero-bg {
+        background:
+          linear-gradient(180deg, rgba(20,33,61,0.25) 0%, rgba(20,33,61,0.85) 55%, rgba(20,33,61,0.96) 100%),
+          url("../assets/teacher.jpg") center 15% / cover no-repeat;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="back light" href="../index.html">← All designs</a>
+  <section class="hero">
+    <div class="hero-bg" role="img" aria-label="Mohammad Abbas"></div>
+    <div class="content">
+      <p class="tag light">Professional biology instruction</p>
+      <div class="rule" aria-hidden="true"></div>
+      <h1 class="brand">Mohammad Abbas<span>Classroom calm. Exam-ready minds.</span></h1>
+      <p class="lead">A polished, trustworthy presence for students and parents — biology explained with structure, care, and authority.</p>
+      <div class="socials" data-socials></div>
+      <a class="phone" href="tel:+9647701528398">0770 152 8398</a>
+    </div>
+  </section>
+  <script src="../scripts/socials.js"></script>
+</body>
+</html>

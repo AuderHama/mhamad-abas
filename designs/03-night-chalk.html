@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Night Chalk — Mohammad Abbas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles/shared.css" />
+  <style>
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: #f0ebe0;
+      background: #1a2332;
+      min-height: 100vh;
+    }
+    .board {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background:
+        radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.04), transparent 50%),
+        repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.03) 3px, rgba(0,0,0,0.03) 4px),
+        #243044;
+      position: relative;
+      overflow: hidden;
+    }
+    .board::before {
+      content: "";
+      position: absolute;
+      inset: 12px;
+      border: 2px solid rgba(232,224,200,0.15);
+      border-radius: 4px;
+      pointer-events: none;
+    }
+    .photo-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .photo-wrap img {
+      width: min(420px, 85%);
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      border-radius: 4px;
+      filter: grayscale(0.15) contrast(1.05);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+      animation: fadeUp 0.9s ease both;
+      transform: rotate(-1.5deg);
+    }
+    .chalk {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(1.5rem, 5vw, 3.5rem);
+      animation: fadeUp 0.85s ease 0.1s both;
+    }
+    .brand {
+      font-family: "Caveat", cursive;
+      font-size: clamp(3.2rem, 8vw, 5.5rem);
+      line-height: 0.95;
+      color: #f5f0e1;
+      text-shadow: 1px 2px 0 rgba(0,0,0,0.25);
+    }
+    .scribble {
+      font-family: "Caveat", cursive;
+      font-size: 1.6rem;
+      color: #9fd4c8;
+      margin: 0.4rem 0 1rem;
+      transform: rotate(-2deg);
+      display: inline-block;
+    }
+    .lead {
+      max-width: 26rem;
+      color: #c8c2b4;
+      line-height: 1.55;
+      margin-bottom: 1.5rem;
+    }
+    .dust {
+      position: absolute;
+      width: 6px; height: 6px;
+      background: rgba(245,240,225,0.35);
+      border-radius: 50%;
+      animation: float 6s ease-in-out infinite;
+    }
+    .dust:nth-child(1) { top: 20%; left: 55%; }
+    .dust:nth-child(2) { top: 40%; left: 70%; animation-delay: -2s; }
+    .dust:nth-child(3) { top: 65%; left: 60%; animation-delay: -4s; width: 4px; height: 4px; }
+    .socials a {
+      background: transparent;
+      border: 1.5px dashed rgba(245,240,225,0.35);
+      color: #f0ebe0;
+      border-radius: 2px;
+    }
+    .socials a:hover { border-style: solid; background: rgba(255,255,255,0.06); }
+    .phone { color: #9fd4c8; }
+    @media (max-width: 800px) {
+      .board { grid-template-columns: 1fr; }
+      .photo-wrap { padding-top: 4rem; }
+      .photo-wrap img { width: min(280px, 70%); aspect-ratio: 1; border-radius: 50%; }
+    }
+  </style>
+</head>
+<body>
+  <a class="back light" href="../index.html">← All designs</a>
+  <section class="board">
+    <span class="dust"></span><span class="dust"></span><span class="dust"></span>
+    <div class="photo-wrap">
+      <img src="../assets/teacher.jpg" alt="Mohammad Abbas" />
+    </div>
+    <div class="chalk">
+      <p class="tag light">Tonight’s lesson</p>
+      <h1 class="brand">Mohammad Abbas</h1>
+      <p class="scribble">Biology · زیندەزانی</p>
+      <p class="lead">Step up to the board. Genes, cells, and systems explained the way a great teacher writes them — clear, calm, memorable.</p>
+      <div class="socials" data-socials></div>
+      <a class="phone" href="tel:+9647701528398">0770 152 8398</a>
+    </div>
+  </section>
+  <script src="../scripts/socials.js"></script>
+</body>
+</html>

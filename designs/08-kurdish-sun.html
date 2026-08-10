@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ku">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kurdish Sun — Mohammad Abbas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@500;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles/shared.css" />
+  <style>
+    :root {
+      --red: #ce1126;
+      --green: #1a7a3a;
+      --sun: #e8b923;
+      --ink: #1a1a1a;
+    }
+    body {
+      font-family: "Sora", sans-serif;
+      color: var(--ink);
+      background: #faf7f0;
+      min-height: 100vh;
+    }
+    .flag-band {
+      display: grid;
+      grid-template-rows: 12px 12px 12px;
+    }
+    .flag-band span:nth-child(1) { background: var(--red); }
+    .flag-band span:nth-child(2) { background: #fff; border-block: 1px solid rgba(0,0,0,0.06); }
+    .flag-band span:nth-child(3) { background: var(--green); }
+    .hero {
+      min-height: calc(100vh - 36px);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+    }
+    .sun {
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      left: 50%;
+      top: 8%;
+      transform: translateX(-50%);
+      z-index: 3;
+      pointer-events: none;
+      animation: spinSlow 60s linear infinite;
+    }
+    .sun circle.core { fill: var(--sun); }
+    .sun .ray { stroke: var(--sun); stroke-width: 6; stroke-linecap: round; }
+    .left {
+      background:
+        linear-gradient(160deg, rgba(206,17,38,0.08), transparent 50%),
+        #faf7f0;
+      padding: clamp(2rem, 5vw, 4rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      animation: fadeUp 0.8s ease both;
+    }
+    .ku {
+      font-family: "Noto Naskh Arabic", serif;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      color: var(--green);
+      margin-bottom: 0.5rem;
+      direction: rtl;
+    }
+    .brand {
+      font-size: clamp(2.4rem, 5.5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.05;
+    }
+    .brand em {
+      display: block;
+      font-style: normal;
+      color: var(--red);
+      font-size: 0.55em;
+      margin-top: 0.35rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .lead {
+      margin: 1.2rem 0 1.5rem;
+      color: #444;
+      line-height: 1.55;
+      max-width: 28rem;
+    }
+    .right {
+      position: relative;
+      background: var(--green);
+      overflow: hidden;
+    }
+    .right img {
+      width: 100%;
+      height: 100%;
+      min-height: 50vh;
+      object-fit: cover;
+      object-position: center 15%;
+      mix-blend-mode: luminosity;
+      opacity: 0.95;
+    }
+    .right::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(45deg, rgba(206,17,38,0.25), transparent 50%, rgba(232,185,35,0.25));
+    }
+    .socials a {
+      border-radius: 0.4rem;
+      border-color: var(--ink);
+      color: var(--ink);
+      background: #fff;
+    }
+    .socials a:hover { background: var(--sun); border-color: var(--sun); }
+    .phone { color: var(--red); font-weight: 700; }
+    @media (max-width: 800px) {
+      .hero { grid-template-columns: 1fr; }
+      .sun { width: 120px; height: 120px; top: auto; bottom: 42%; }
+      .right { max-height: 42vh; }
+    }
+  </style>
+</head>
+<body>
+  <a class="back" href="../index.html">← All designs</a>
+  <div class="flag-band" aria-hidden="true"><span></span><span></span><span></span></div>
+  <section class="hero">
+    <svg class="sun" viewBox="0 0 100 100" aria-hidden="true">
+      <circle class="core" cx="50" cy="50" r="18"/>
+      <g class="rays">
+        <line class="ray" x1="50" y1="8" x2="50" y2="22"/>
+        <line class="ray" x1="50" y1="78" x2="50" y2="92"/>
+        <line class="ray" x1="8" y1="50" x2="22" y2="50"/>
+        <line class="ray" x1="78" y1="50" x2="92" y2="50"/>
+        <line class="ray" x1="20" y1="20" x2="30" y2="30"/>
+        <line class="ray" x1="70" y1="70" x2="80" y2="80"/>
+        <line class="ray" x1="80" y1="20" x2="70" y2="30"/>
+        <line class="ray" x1="30" y1="70" x2="20" y2="80"/>
+        <line class="ray" x1="15" y1="35" x2="28" y2="40"/>
+        <line class="ray" x1="72" y1="60" x2="85" y2="65"/>
+        <line class="ray" x1="15" y1="65" x2="28" y2="60"/>
+        <line class="ray" x1="72" y1="40" x2="85" y2="35"/>
+        <line class="ray" x1="35" y1="15" x2="40" y2="28"/>
+        <line class="ray" x1="60" y1="72" x2="65" y2="85"/>
+        <line class="ray" x1="65" y1="15" x2="60" y2="28"/>
+        <line class="ray" x1="40" y1="72" x2="35" y2="85"/>
+        <line class="ray" x1="50" y1="5" x2="50" y2="14"/>
+        <line class="ray" x1="50" y1="86" x2="50" y2="95"/>
+        <line class="ray" x1="5" y1="50" x2="14" y2="50"/>
+        <line class="ray" x1="86" y1="50" x2="95" y2="50"/>
+        <line class="ray" x1="12" y1="28" x2="22" y2="34"/>
+      </g>
+    </svg>
+    <div class="left">
+      <p class="ku">محمد عباس — زیندەزانی</p>
+      <h1 class="brand">Mohammad Abbas<em>Biology with pride &amp; clarity</em></h1>
+      <p class="lead">Lessons for Kurdish students and beyond — genetics, life science, and exam confidence, taught with care.</p>
+      <div class="socials" data-socials></div>
+      <a class="phone" href="tel:+9647701528398">0770 152 8398</a>
+    </div>
+    <div class="right">
+      <img src="../assets/teacher.jpg" alt="Mohammad Abbas" />
+    </div>
+  </section>
+  <script src="../scripts/socials.js"></script>
+</body>
+</html>
